@@ -72,7 +72,7 @@ int main(void)
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
   ADC10CTL0 = SREF_1 + ADC10SHT_2 + REFON + ADC10ON + ADC10IE;
   __enable_interrupt();                     // Enable interrupts.
-  TACCR0 = 40;                              // Delay to allow Ref to settle
+  TACCR0 = 90;                              // Delay to allow Ref to settle
   TACCTL0 |= CCIE;                          // Compare-mode interrupt.
   TACTL = TASSEL_2 | MC_1;                  // TACLK = SMCLK, Up mode.
   LPM0;                                     // Wait for delay.
